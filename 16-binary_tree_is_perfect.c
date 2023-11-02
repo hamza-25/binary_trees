@@ -65,3 +65,14 @@ int is_perfect_recursive(const binary_tree_t *tree,
 	return (is_perfect_recursive(tree->left, leaf_depth, level + 1) &&
 		is_perfect_recursive(tree->right, leaf_depth, level + 1));
 }
+
+/**
+ * is_leaf - Checks if a node is a leaf of a binary tree.
+ * @node: A pointer to the node to check.
+ *
+ * Return: If the node is a leaf, 1, otherwise, 0.
+ */
+unsigned char is_leaf(const binary_tree_t *node)
+{
+	return ((node->left == NULL && node->right == NULL) ? 1 : 0);
+}
